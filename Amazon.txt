@@ -1,0 +1,38 @@
+
+Product Information:
+
+Product ID: A unique identifier for the product.
+Product Name: The name of the product.
+Description: A detailed description of the product.
+Category: The category to which the product belongs.
+Model Number: The model number or name.
+Remaining Items : The number of items remaining
+
+Product Seller Information : 
+
+Brand: The brand or manufacturer of the product.
+Supplier_Name : The name of the supplier
+Supplier_ID : The id of the supplier
+Warehouse: Locations of warehouses.
+
+Product Related Details:
+
+Images and Videos.
+
+Product Pricing Information:
+
+Price: The selling price of the product.
+Currency: The currency in which the price is listed.Product Search and Discovery:
+
+Search Functionality: Product ID, Name, Description, Category, and Model Number all contribute to a product's searchability. By accurately entering these details, sellers ensure their products appear in relevant searches.
+Filtering and Sorting: Category and other attributes allow users to filter and sort products, narrowing down their choices based on specific needs.
+Product Display and Purchase:
+
+Informed Decisions: Description, Images, and Videos provide users with comprehensive information to make informed purchasing decisions.
+Pricing and Availability: Price and Currency inform users of the product's cost, while Remaining Items indicates stock availability.
+Personalization and Recommendations:
+
+Recommendation Engine: Amazon analyzes user behavior (browsing history, purchase history) and product information to suggest relevant products, increasing the likelihood of additional purchases.
+Targeted Advertising: Product information is used for targeted advertising, displaying ads for products users might be interested in, based on their browsing and purchase behavior.
+
+
