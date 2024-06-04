@@ -1,0 +1,101 @@
++---------------------------+
+|       Price Sources       |
+|     (Stocks, Mutual       |
+|       Funds, etc.)        |
++------------+--------------+
+             |
+             v
++---------------------------+
+| Price Update Service      |
+| - Aggregates data         |
+| - Updates every 10 mins   |
++------------+--------------+
+             |
+             v
++---------------------------+
+| Portfolio Calculation     |
+| Service                   |
+| - Calculates portfolio    |
+|   value based on latest   |
+|   prices                  |
++------------+--------------+
+             |
+             v
++---------------------------+
+| Portfolio Database        |
+| - Stores user portfolios  |
+| - Maintains asset data    |
++------------+--------------+
+             |
+             v
++---------------------------+
+| Real-Time Update Service  |
+| - Pushes updates to users |
+| - Uses WebSockets/Server- |
+|   Sent Events             |
++------------+--------------+
+             |
+             v
++---------------------------+        +-------------------+
+| User Interface (Web/Mobile) |      | User Authentication|
+| - Displays real-time portfolio     | Service            |
+|   data                              | - Manages user     |
+| - Interactive and responsive        |   login, sessions  |
++---------------------------+        +-------------------+
+
+
+Explanation:
+Price Sources:
+
+These are external systems or services providing the latest prices for stocks, mutual funds, etc. They update every 10 minutes or as frequently as possible.
+Price Update Service:
+
+This service aggregates and processes the incoming price data from various sources. It ensures that the latest prices are available for portfolio calculations.
+The service updates prices every 10 minutes and pushes the new data to the Portfolio Calculation Service.
+Portfolio Calculation Service:
+
+This service calculates the current value of each user's portfolio based on the latest price data.
+It ensures that the portfolio values are accurate and up-to-date, incorporating the latest prices from the Price Update Service.
+Portfolio Database:
+
+This is a central database where user portfolios are stored. Each portfolio contains user information, assets, and their corresponding values.
+The database is optimized for quick read and write operations to handle real-time updates and user queries.
+Real-Time Update Service:
+
+This service pushes real-time updates to the users. It can use WebSockets or Server-Sent Events (SSE) to provide instant updates as soon as the portfolio values are recalculated.
+It ensures that users see their updated portfolio values in real-time.
+User Interface (Web/Mobile):
+
+The front-end applications (web and mobile) where users log in to view their portfolios.
+The interface is designed to be interactive and responsive, displaying real-time data pushed by the Real-Time Update Service.
+User Authentication Service:
+
+This service handles user authentication, managing login, sessions, and user permissions.
+It ensures that only authenticated users can access their portfolios.
+Data Flow:
+Price Update:
+
+Price sources provide updated prices every 10 minutes.
+The Price Update Service aggregates and processes these updates.
+Portfolio Calculation:
+
+The Portfolio Calculation Service recalculates user portfolio values using the latest price data.
+Updated portfolio values are stored in the Portfolio Database.
+Real-Time Update:
+
+The Real-Time Update Service pushes the new portfolio values to the user interfaces as soon as they are available.
+User Interaction:
+
+Users log in through the User Authentication Service.
+Authenticated users can view their real-time portfolios on the web or mobile interface.
+Scalability and Reliability Considerations:
+Scalability:
+
+Use distributed systems and cloud services to handle increasing numbers of users and data.
+Implement load balancing and auto-scaling features to ensure the platform can handle high traffic and data loads.
+Reliability:
+
+Implement redundancy and failover mechanisms to ensure high availability.
+Use robust data storage solutions with regular backups to prevent data loss.
+Monitor system performance and health using dedicated monitoring tools to quickly identify and address issues.
+This design ensures that the platform can reliably and efficiently manage user portfolios, providing real-time updates and scaling to accommodate growth.
